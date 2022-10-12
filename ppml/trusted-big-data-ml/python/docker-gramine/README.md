@@ -48,7 +48,7 @@ mr_enclave       : c7a8a42af......
 mr_signer        : 6f0627955......
 ````
 
-### 2. Prepare Spark SSL key
+### 2. Prepare SSL key
 
 #### 2.1 Prepare the Key
 
@@ -144,7 +144,11 @@ Upload the metadata of your MREnclave obtained above to EHSM, and then only regi
 
 ```bash
 # At /ppml/trusted-big-data-ml inside the container now
-python register-mrenclave.py --appid <your_appid> --apikey <your_apikey> --url https://<kms_ip>:9000 --mr_enclave <your_mrenclave_hash_value> --mr_signer <your_mrensigner_hash_value>
+python register-mrenclave.py --appid <your_appid> \
+                             --apikey <your_apikey> \
+                             --url https://<kms_ip>:9000 \
+                             --mr_enclave <your_mrenclave_hash_value> \
+                             --mr_signer <your_mrensigner_hash_value>
 ```
 
 ## Run Your PySpark Program
